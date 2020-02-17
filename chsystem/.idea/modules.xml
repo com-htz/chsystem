@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/ChSystem.iml" filepath="$PROJECT_DIR$/.idea/ChSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chsystem-commons/chsystem-commons.iml" filepath="$PROJECT_DIR$/chsystem-commons/chsystem-commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chsystem-domain/chsystem-domain.iml" filepath="$PROJECT_DIR$/chsystem-domain/chsystem-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chsystem-web-admin/chsystem-web-admin.iml" filepath="$PROJECT_DIR$/chsystem-web-admin/chsystem-web-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chsystem-web-api/chsystem-web-api.iml" filepath="$PROJECT_DIR$/chsystem-web-api/chsystem-web-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chsystem-web-ui/chsystem-web-ui.iml" filepath="$PROJECT_DIR$/chsystem-web-ui/chsystem-web-ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chsystem-dependencies/shsystem-dependencies.iml" filepath="$PROJECT_DIR$/chsystem-dependencies/shsystem-dependencies.iml" />
+    </modules>
+  </component>
+</project>

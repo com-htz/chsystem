@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="chsystem-web-api:war">
+    <output-path>$PROJECT_DIR$/chsystem-web-api/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>chsystem-web-api</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="chsystem-web-api-1.0.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="chsystem-web-api:war exploded" />
+    </root>
+  </artifact>
+</component>
