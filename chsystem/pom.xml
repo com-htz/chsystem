@@ -14,6 +14,7 @@
         <module>chsystem-dependencies</module>
         <module>chsystem-commons</module>
         <module>chsystem-domain</module>
+        <module>chsystem-external</module>
         <module>chsystem-web-admin</module>
         <module>chsystem-web-ui</module>
         <module>chsystem-web-api</module>

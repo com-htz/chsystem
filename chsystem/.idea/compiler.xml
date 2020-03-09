@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="chsystem-commons" />
         <module name="chsystem-domain" />
+        <module name="chsystem-external" />
         <module name="chsystem-web-admin" />
         <module name="chsystem-web-api" />
         <module name="chsystem-web-ui" />
@@ -16,11 +17,12 @@
     <bytecodeTargetLevel>
       <module name="ChSystem" target="1.5" />
       <module name="chsystem-commons" target="1.8" />
+      <module name="chsystem-dependencies" target="1.8" />
       <module name="chsystem-domain" target="1.8" />
+      <module name="chsystem-external" target="1.8" />
       <module name="chsystem-web-admin" target="1.8" />
       <module name="chsystem-web-api" target="1.8" />
       <module name="chsystem-web-ui" target="1.8" />
-      <module name="shsystem-dependencies" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

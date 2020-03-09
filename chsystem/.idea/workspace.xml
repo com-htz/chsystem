@@ -2,13 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abe17114-e588-421b-a61c-4e453a380522" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/chsystem_web_admin_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/chsystem_web_admin_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_5.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/chsystem-commons/src/main/java/com/htz/chsystem/commons/utils/EmailSendUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chsystem-commons/src/main/java/com/htz/chsystem/commons/utils/HttpClientUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chsystem-commons/src/main/java/com/htz/chsystem/commons/utils/MapperUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chsystem-commons/src/main/java/com/htz/chsystem/commons/utils/RegexpUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chsystem-commons/src/main/java/com/htz/chsystem/commons/validator/BeanValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chsystem-external/libs/kaptcha-2.3.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chsystem-external/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chsystem-web-api/src/main/resources/chsystem.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chsystem-web-api/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chsystem-web-api/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chsystem-web-api/src/main/resources/spring-context-druid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chsystem-web-api/src/main/resources/spring-context-mybatis.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chsystem-web-api/src/main/resources/spring-context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chsystem-web-api/src/main/resources/spring-mvc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chsystem-web-api/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chsystem-web-ui/src/main/resources/chsystem.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chsystem-web-ui/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chsystem-web-ui/src/main/resources/spring-context-email.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chsystem-web-ui/src/main/resources/spring-context-kaptcha.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chsystem-web-ui/src/main/resources/spring-context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chsystem-web-ui/src/main/resources/spring-mvc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chsystem-web-ui/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chsystem-commons/chsystem-commons.iml" beforeDir="false" afterPath="$PROJECT_DIR$/chsystem-commons/chsystem-commons.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chsystem-commons/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/chsystem-commons/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chsystem-dependencies/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/chsystem-dependencies/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chsystem-dependencies/shsystem-dependencies.iml" beforeDir="false" afterPath="$PROJECT_DIR$/chsystem-dependencies/chsystem-dependencies.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chsystem-domain/chsystem-domain.iml" beforeDir="false" afterPath="$PROJECT_DIR$/chsystem-domain/chsystem-domain.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chsystem-web-admin/chsystem-web-admin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/chsystem-web-admin/chsystem-web-admin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chsystem-web-admin/src/main/resources/chsystem.properties" beforeDir="false" afterPath="$PROJECT_DIR$/chsystem-web-admin/src/main/resources/chsystem.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chsystem-web-api/chsystem-web-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/chsystem-web-api/chsystem-web-api.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chsystem-web-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/chsystem-web-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chsystem-web-ui/chsystem-web-ui.iml" beforeDir="false" afterPath="$PROJECT_DIR$/chsystem-web-ui/chsystem-web-ui.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chsystem-web-ui/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/chsystem-web-ui/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/chsystem-dependencies/target/" />
@@ -17,6 +47,7 @@
     <ignored path="$PROJECT_DIR$/chsystem-web-admin/target/" />
     <ignored path="$PROJECT_DIR$/chsystem-web-ui/target/" />
     <ignored path="$PROJECT_DIR$/chsystem-web-api/target/" />
+    <ignored path="$PROJECT_DIR$/chsystem-external/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +59,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chsystem-web-admin/src/main/webapp/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
+            <state relative-caret-position="285">
               <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
             </state>
           </provider>
@@ -37,8 +68,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chsystem-dependencies/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="35" column="43" lean-forward="true" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+            <state relative-caret-position="468">
+              <caret line="36" column="48" lean-forward="true" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -89,9 +120,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="953" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+    <option name="x" value="951" />
+    <option name="width" value="975" />
+    <option name="height" value="1049" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -106,105 +137,19 @@
               <item name="chsystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="chsystem" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="chsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="chsystem-commons" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="chsystem-dependencies" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="chsystem-domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="chsystem-web-admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="chsystem-web-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="chsystem-web-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="chsystem-web-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="chsystem-web-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="chsystem-web-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="chsystem-web-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="chsystem-web-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="chsystem-web-api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="chsystem-web-ui" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="NBKnowledgePane" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1581916399301" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1583745787627" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -248,16 +193,18 @@
       <workItem from="1581912181436" duration="247000" />
       <workItem from="1581912467828" duration="3356000" />
       <workItem from="1581930138701" duration="163000" />
+      <workItem from="1583745298983" duration="202000" />
+      <workItem from="1583745511316" duration="275000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3766000" />
+    <option name="totallyTimeSpent" value="4243000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18710022" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2761394" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="JRebel" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -266,8 +213,6 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Designer" order="7" />
       <window_info id="Web" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Tail" />
-      <window_info anchor="bottom" id="JRebel Executor" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -284,10 +229,13 @@
       <window_info anchor="bottom" id="JRebel Console" order="13" side_tool="true" />
       <window_info anchor="bottom" id="Spring" order="14" />
       <window_info anchor="bottom" id="Java Enterprise" order="15" />
+      <window_info anchor="bottom" id="JRebel Executor" order="16" />
+      <window_info anchor="bottom" id="Tail" order="17" />
+      <window_info anchor="right" id="Bean Validation" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Maven" order="3" visible="true" weight="0.21268657" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.2124665" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Database" order="6" />
@@ -309,7 +257,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chsystem-dependencies/shsystem-dependencies.iml">
+    <entry file="file://$PROJECT_DIR$/chsystem-dependencies/chsystem-dependencies.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
@@ -413,15 +361,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chsystem-web-admin/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
+        <state relative-caret-position="285">
           <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/chsystem-dependencies/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="35" column="43" lean-forward="true" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+        <state relative-caret-position="468">
+          <caret line="36" column="48" lean-forward="true" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
         </state>
       </provider>
     </entry>
