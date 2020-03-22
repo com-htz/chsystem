@@ -7,21 +7,30 @@ import com.htz.chsystem.domain.TbUser;
 import com.htz.chsystem.web.admin.dao.TbUserDao;
 import com.htz.chsystem.web.admin.service.TbUserService;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
 
+import javax.annotation.Resource;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * UserService实现类
+ * <p>Title: TbUserServiceImpl</p>
+ * <p>Description: </p>
+ *
+ * @author EnergyFiled
+ * @version 1.0.0
+ */
+
 @Service
-@Transactional(readOnly = true)
+@Transactional
 public class TbUserServiceImpl implements TbUserService {
 
-    @Autowired
+    @Resource
     private TbUserDao tbUserDao;
 
 
@@ -30,19 +39,19 @@ public class TbUserServiceImpl implements TbUserService {
         return tbUserDao.selectAll();
     }
 
+
     @Override
-    @Transactional(readOnly = false)
+    @Transactional(readOnly = true)
     public BaseResult save(TbUser tbUser) {
+        // 验证用户表单信息
         String validator = BeanValidator.validator(tbUser);
         // 验证不通过
         if (validator != null) {
             return BaseResult.fail(validator);
         }
-
         // 通过验证
         else {
             tbUser.setUpdated(new Date());
-
             // 新增用户
             if (tbUser.getId() == null) {
                 // 密码需要加密处理
@@ -50,7 +59,6 @@ public class TbUserServiceImpl implements TbUserService {
                 tbUser.setCreated(new Date());
                 tbUserDao.insert(tbUser);
             }
-
             // 编辑用户
             else {
                 // 编辑用户时如果没有输入密码则沿用原来的密码
@@ -62,19 +70,17 @@ public class TbUserServiceImpl implements TbUserService {
                     if (StringUtils.length(tbUser.getPassword()) < 6 || StringUtils.length(tbUser.getPassword()) > 20) {
                         return BaseResult.fail("密码长度必须介于 6 - 20 位之间");
                     }
-
                     // 设置密码加密
                     tbUser.setPassword(DigestUtils.md5DigestAsHex(tbUser.getPassword().getBytes()));
                 }
                 update(tbUser);
             }
-
             return BaseResult.success("保存用户信息成功");
         }
     }
 
     @Override
-    @Transactional(readOnly = false)
+    @Transactional(readOnly = true)
     public void delete(Long id) {
         tbUserDao.delete(id);
     }
@@ -85,13 +91,13 @@ public class TbUserServiceImpl implements TbUserService {
     }
 
     @Override
-    @Transactional(readOnly = false)
+    @Transactional(readOnly = true)
     public void update(TbUser tbUser) {
         tbUserDao.update(tbUser);
     }
 
     @Override
-    @Transactional(readOnly = false)
+    @Transactional(readOnly = true)
     public void deleteMulti(String[] ids) {
         tbUserDao.deleteMulti(ids);
     }
