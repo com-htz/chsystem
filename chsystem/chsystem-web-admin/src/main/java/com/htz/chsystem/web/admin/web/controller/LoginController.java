@@ -3,20 +3,29 @@ package com.htz.chsystem.web.admin.web.controller;
 import com.htz.chsystem.commons.constant.ConstantUtils;
 import com.htz.chsystem.domain.TbUser;
 import com.htz.chsystem.web.admin.service.TbUserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import sun.misc.Contended;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+
+/**
+ * 登录控制器层
+ * <p>Title: LoginController</p>
+ * <p>Description: </p>
+ *
+ * @author EnergyFiled
+ * @version 1.0.0
+ * @date 10:27 2020/3/22
+ */
 
 @Controller
 public class LoginController {
 
-    @Autowired
+    @Resource
     private TbUserService tbUserService;
 
     /**
