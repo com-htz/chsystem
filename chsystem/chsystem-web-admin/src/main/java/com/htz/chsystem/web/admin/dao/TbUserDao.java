@@ -7,8 +7,14 @@ import java.util.List;
 import java.util.Map;
 
 /**
- *用户数据访问层
+ * 用户数据访问层
+ * <p>Title: TbUserDao</p>
+ * <p>Description: </p>
+ *
+ * @author EnergyFiled
+ * @version 1.0.0
  */
+
 @Repository
 public interface TbUserDao {
 
@@ -49,13 +55,6 @@ public interface TbUserDao {
      * @return
      */
     TbUser getByPhone(String phone);
-
-    /**
-     * 搜索
-     * @param entity
-     * @return
-     */
-    List<TbUser> search(TbUser entity);
 
     /**
      * 批量删除
