@@ -27,7 +27,7 @@ import java.util.Map;
  */
 
 @Service
-@Transactional
+@Transactional(readOnly = true)
 public class TbUserServiceImpl implements TbUserService {
 
     @Resource
@@ -41,7 +41,7 @@ public class TbUserServiceImpl implements TbUserService {
 
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional(readOnly = false)
     public BaseResult save(TbUser tbUser) {
         // 验证用户表单信息
         String validator = BeanValidator.validator(tbUser);
@@ -80,7 +80,7 @@ public class TbUserServiceImpl implements TbUserService {
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional(readOnly = false)
     public void delete(Long id) {
         tbUserDao.delete(id);
     }
@@ -91,13 +91,13 @@ public class TbUserServiceImpl implements TbUserService {
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional(readOnly = false)
     public void update(TbUser tbUser) {
         tbUserDao.update(tbUser);
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional(readOnly = false)
     public void deleteMulti(String[] ids) {
         tbUserDao.deleteMulti(ids);
     }
