@@ -14,7 +14,7 @@
     <packaging>war</packaging>
 
     <name>chsystem-web-admin</name>
-    <description></description>
+    <description> </description>
 
 
     <dependencies>
@@ -38,6 +38,10 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
         </dependency>
         <!-- Spring End -->
 
@@ -101,6 +105,14 @@
             <artifactId>junit</artifactId>
         </dependency>
         <!-- Test End -->
+
+        <!-- Validate Begin -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
+        <!-- Validate End -->
+
     </dependencies>
 
 </project>
