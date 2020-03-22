@@ -4,7 +4,12 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * 分页数据传输对象
+ * 分页传输数据对象
+ * <p>Title: PageInfo</p>
+ * <p>Description: </p>
+ *
+ * @author EnergyFiled
+ * @version 1.0.0
  */
 public class PageInfo<T> implements Serializable {
     private int draw;

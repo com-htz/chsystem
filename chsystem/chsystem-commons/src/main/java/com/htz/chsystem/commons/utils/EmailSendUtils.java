@@ -4,6 +4,14 @@ import org.apache.commons.mail.Email;
 import org.apache.commons.mail.EmailException;
 import org.springframework.beans.factory.annotation.Autowired;
 
+/**
+ * 邮箱工具类
+ * <p>Title: EmailSendUtils</p>
+ * <p>Description: </p>
+ *
+ * @author EnergyFiled
+ * @version 1.0.0
+ */
 public class EmailSendUtils {
 
     @Autowired

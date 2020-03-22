@@ -15,6 +15,11 @@ import java.util.Arrays;
 
 /**
  * HttpClient 工具类
+ * <p>Title: HttpClientUtils</p>
+ * <p>Description: </p>
+ *
+ * @author EnergyFiled
+ * @version 1.0.0
  */
 public class HttpClientUtils {
 
