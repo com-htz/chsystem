@@ -5,7 +5,6 @@ import com.htz.chsystem.commons.dto.PageInfo;
 import com.htz.chsystem.domain.TbUser;
 import com.htz.chsystem.web.admin.service.TbUserService;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -14,26 +13,35 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+
+/**
+ * 用户控制器
+ * <p>Title: UserController</p>
+ * <p>Description: </p>
+ *
+ * @author EnergyFiled
+ * @version 1.0.0
+ * @date 10:34 2020/3/22 
+ */
 
 @Controller
 @RequestMapping(value = "user")
 public class UserController {
 
-    @Autowired
+    @Resource
     private TbUserService tbUserService;
 
     @ModelAttribute
     public TbUser getTbUser(Long id) {
         TbUser tbUser = null;
-
         // id 不为空，则从数据库获取
         if (id != null) {
             tbUser = tbUserService.getById(id);
         } else {
             tbUser = new TbUser();
         }
-
         return tbUser;
     }
 
@@ -42,7 +50,6 @@ public class UserController {
      *
      * @return
      */
-
     @RequestMapping(value = "list", method = RequestMethod.GET)
     public String list() {
         return "user_list";
@@ -53,7 +60,6 @@ public class UserController {
      *
      * @return
      */
-
     @RequestMapping(value = "form", method = RequestMethod.GET)
     public String form() {
         return "user_form";
@@ -65,7 +71,6 @@ public class UserController {
      * @param tbUser
      * @return
      */
-
     @RequestMapping(value = "save", method = RequestMethod.POST)
     public String save(TbUser tbUser, Model model, RedirectAttributes redirectAttributes) {
         BaseResult baseResult = tbUserService.save(tbUser);
@@ -85,10 +90,13 @@ public class UserController {
 
     /**
      * 删除用户信息
+     * <p>Title: UserController</p>
+     * <p>Description: </p>
      *
-     * @param ids
-     * @return
+     * @author EnergyFiled
+     * @version 1.0.0
      */
+
     @ResponseBody
     @RequestMapping(value = "delete", method = RequestMethod.POST)
     public BaseResult delete(String ids) {
@@ -113,6 +121,15 @@ public class UserController {
     public String detail() {
         return "user_detail";
     }
+
+    /**
+     * 用户列表分页展示
+     * <p>Title: UserController</p>
+     * <p>Description: </p>
+     *
+     * @author EnergyFiled
+     * @version 1.0.0
+     */
 
     @ResponseBody
     @RequestMapping(value = "page", method = RequestMethod.GET)
