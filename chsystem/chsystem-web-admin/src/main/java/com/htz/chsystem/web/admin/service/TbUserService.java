@@ -6,6 +6,15 @@ import com.htz.chsystem.domain.TbUser;
 
 import java.util.List;
 
+/**
+ * 用户service抽象类
+ * <p>Title: TbUserService</p>
+ * <p>Description: </p>
+ *
+ * @author EnergyFiled
+ * @version 1.0.0
+ */
+
 public interface TbUserService {
     /**
      * 查询全部
@@ -45,7 +54,6 @@ public interface TbUserService {
      * @param ids
      */
     void deleteMulti(String[] ids);
-
 
     /**
      * 分页查询
