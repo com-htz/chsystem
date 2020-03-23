@@ -24,7 +24,7 @@
             </h1>
             <ol class="breadcrumb">
                 <li><a href="/main"><i class="fa fa-dashboard"></i> 首页</a></li>
-                <li class="active">${tbUser.id == null ? "新增" : "编辑"}用户</li>
+                <li class="active">${tbWorker.id == null ? "新增" : "编辑"}用户</li>
             </ol>
         </section>
 
@@ -41,27 +41,13 @@
 
                     <div class="box box-info">
                         <div class="box-header with-border">
-                            <h3 class="box-title">${tbUser.id == null ? "新增" : "编辑"}用户</h3>
+                            <h3 class="box-title">${tbWorker.id == null ? "新增" : "编辑"}用户</h3>
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
-                        <form:form id="inputForm" cssClass="form-horizontal" action="/user/save" method="post" modelAttribute="tbUser">
+                        <form:form id="inputForm" cssClass="form-horizontal" action="/worker/save" method="post" modelAttribute="tbWorker">
                             <form:hidden path="id" />
                             <div class="box-body">
-                                <div class="form-group">
-                                    <label for="email" class="col-sm-2 control-label">邮箱</label>
-
-                                    <div class="col-sm-10">
-                                        <form:input cssClass="form-control required email" path="email" placeholder="请输入邮箱地址" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="password" class="col-sm-2 control-label">密码</label>
-
-                                    <div class="col-sm-10">
-                                        <form:password cssClass="form-control" path="password" placeholder="请输入登录密码" />
-                                    </div>
-                                </div>
                                 <div class="form-group">
                                     <label for="username" class="col-sm-2 control-label">姓名</label>
 
@@ -71,9 +57,20 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="phone" class="col-sm-2 control-label">手机</label>
-
                                     <div class="col-sm-10">
                                         <form:input cssClass="form-control required mobile" path="phone" placeholder="请输入用户的手机号" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="col-sm-2 control-label">密码</label>
+                                    <div class="col-sm-10">
+                                        <form:password cssClass="form-control" path="password" placeholder="请输入登录密码" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="address" class="col-sm-2 control-label">地址</label>
+                                    <div class="col-sm-10">
+                                        <form:input cssClass="form-control required " path="address" placeholder="请输入地址" />
                                     </div>
                                 </div>
                             </div>

@@ -57,9 +57,9 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-3">
                                     <div class="form-group">
-                                        <label for="email" class="col-sm-4 control-label">邮箱</label>
+                                        <label for="address" class="col-sm-4 control-label">邮箱</label>
                                         <div class="col-sm-8">
-                                            <input id="email" class="form-control" placeholder="邮箱" />
+                                            <input id="address" class="form-control" placeholder="邮箱" />
                                         </div>
                                     </div>
                                 </div>
@@ -85,8 +85,8 @@
                         </div>
 
                         <div class="box-body">
-                            <a href="/user/form" type="button" class="btn btn-sm btn-default"><i class="fa fa-plus"></i> 新增</a>&nbsp;&nbsp;&nbsp;
-                            <button type="button" class="btn btn-sm btn-default" onclick="App.deleteMulti('/user/delete')"><i class="fa fa-trash-o"></i> 删除</button>&nbsp;&nbsp;&nbsp;
+                            <a href="/worker/form" type="button" class="btn btn-sm btn-default"><i class="fa fa-plus"></i> 新增</a>&nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-sm btn-default" onclick="App.deleteMulti('/worker/delete')"><i class="fa fa-trash-o"></i> 删除</button>&nbsp;&nbsp;&nbsp;
                             <a href="#" type="button" class="btn btn-sm btn-default"><i class="fa fa-download"></i> 导入</a>&nbsp;&nbsp;&nbsp;
                             <a href="#" type="button" class="btn btn-sm btn-default"><i class="fa fa-upload"></i> 导出</a>&nbsp;&nbsp;&nbsp;
                             <button type="button" class="btn btn-sm btn-primary" onclick="$('.box-info-search').css('display') == 'none' ? $('.box-info-search').show('fast') : $('.box-info-search').hide('fast')"><i class="fa fa-search"></i> 搜索</button>
@@ -101,7 +101,7 @@
                                     <th>ID</th>
                                     <th>用户名</th>
                                     <th>手机号</th>
-                                    <th>邮箱</th>
+                                    <th>地址</th>
                                     <th>更新时间</th>
                                     <th>操作</th>
                                 </tr>
@@ -139,31 +139,31 @@
             {"data": "id"},
             {"data": "username"},
             {"data": "phone"},
-            {"data": "email"},
+            {"data": "address"},
             {"data": "updated"},
             {
                 "data": function (row, type, val, meta) {
-                    var detailUrl = "/user/detail?id=" + row.id;
-                    var deleteUrl = "/user/delete";
+                    var detailUrl = "/worker/detail?id=" + row.id;
+                    var deleteUrl = "/worker/delete";
                     return '<button type="button" class="btn btn-sm btn-default" onclick="App.showDetail(\'' + detailUrl + '\');"><i class="fa fa-search"></i> 查看</button>&nbsp;&nbsp;&nbsp;' +
-                        '<a href="/user/form?id=' + row.id + '" type="button" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i> 编辑</a>&nbsp;&nbsp;&nbsp;' +
+                        '<a href="/worker/form?id=' + row.id + '" type="button" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i> 编辑</a>&nbsp;&nbsp;&nbsp;' +
                         '<button type="button" class="btn btn-sm btn-danger" onclick="App.deleteSingle(\'' + deleteUrl + '\', \'' + row.id + '\')"><i class="fa fa-trash-o"></i> 删除</button>';
                 }
             }
         ];
 
-        _dataTable = App.initDataTables("/user/page", _columns);
+        _dataTable = App.initDataTables("/worker/page", _columns);
     });
 
     function search() {
         var username = $("#username").val();
         var phone = $("#phone").val();
-        var email = $("#email").val();
+        var address = $("#address").val();
 
         var param = {
             "username": username,
             "phone": phone,
-            "email": email
+            "address": address
         };
 
         _dataTable.settings()[0].ajax.data = param;

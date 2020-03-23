@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.htz.chsystem.web.admin.dao.TbUserDao">
-    <sql id="tbUserColumns">
+<mapper namespace="com.htz.chsystem.web.admin.dao.TbWorkerDao">
+    <sql id="tbWorkerColumns">
       a.id,
       a.username,
       a.password,
       a.phone,
-      a.email,
+      a.address,
       a.created,
       a.updated
     </sql>
 
-    <select id="selectAll" resultType="TbUser">
+    <select id="selectAll" resultType="TbWorker">
         SELECT
-        <include refid="tbUserColumns" />
+        <include refid="tbWorkerColumns" />
         FROM
-        tb_user AS a
+        tb_worker AS a
     </select>
 
     <insert id="insert" >
-        INSERT INTO tb_user (
+        INSERT INTO tb_worker (
           `username`,
           `password`,
           `phone`,
-          `email`,
+          `address`,
           `created`,
           `updated`
         )
@@ -32,59 +32,59 @@
             #{username},
             #{password},
             #{phone},
-            #{email},
+            #{address},
             #{created},
             #{updated}
           );
     </insert>
 
     <delete id="delete">
-        DELETE from tb_user WHERE id = #{id}
+        DELETE from tb_worker WHERE id = #{id}
     </delete>
 
     <update id="update">
         UPDATE
-          tb_user
+          tb_worker
         SET
           username = #{username},
           password = #{password},
           phone = #{phone},
-          email = #{email},
+          address = #{address},
           updated = #{updated}
         WHERE id = #{id}
     </update>
 
-    <select id="getById" resultType="TbUser">
+    <select id="getById" resultType="TbWorker">
         SELECT
-        <include refid="tbUserColumns" />
+        <include refid="tbWorkerColumns" />
         FROM
-        tb_user AS a
+        tb_worker AS a
         WHERE
         a.id = #{id}
     </select>
 
-    <select id="getByPhone" resultType="TbUser">
+    <select id="getByPhone" resultType="TbWorker">
         SELECT
-        <include refid="tbUserColumns" />
+        <include refid="tbWorkerColumns" />
         FROM
-        tb_user AS a
+        tb_worker AS a
         WHERE
         a.phone = #{phone}
     </select>
 
     <delete id="deleteMulti">
-        DELETE FROM tb_user
+        DELETE FROM tb_worker
         WHERE id IN
         <foreach collection="array" open="(" close=")" separator=","  item="id">
             #{id}
         </foreach>
     </delete>
 
-    <select id="page" resultType="TbUser" parameterType="java.util.Map">
+    <select id="page" resultType="TbWorker" parameterType="java.util.Map">
         SELECT
-        <include refid="tbUserColumns" />
+        <include refid="tbWorkerColumns" />
         FROM
-        tb_user AS a
+        tb_worker AS a
         <where>
             <if test="pageParams.username != null and pageParams.username != ''" >
                 AND a.username LIKE CONCAT ('%', #{pageParams.username}, '%')
@@ -92,8 +92,8 @@
             <if test="pageParams.phone != null and pageParams.phone != ''" >
                 AND a.phone LIKE CONCAT ('%', #{pageParams.phone}, '%')
             </if>
-            <if test="pageParams.email != null and pageParams.email != ''" >
-                AND a.email LIKE CONCAT ('%', #{pageParams.email}, '%')
+            <if test="pageParams.address != null and pageParams.address != ''" >
+                AND a.address LIKE CONCAT ('%', #{pageParams.address}, '%')
             </if>
         </where>
         --         ORDER BY a.updated DESC
@@ -101,7 +101,7 @@
     </select>
 
     <select id="count" resultType="java.lang.Integer">
-        SELECT COUNT(*) FROM tb_user AS a
+        SELECT COUNT(*) FROM tb_worker AS a
         <where>
             <if test="username != null and username != ''" >
                 AND a.username LIKE CONCAT ('%', #{username}, '%')
@@ -109,8 +109,8 @@
             <if test="phone != null and phone != ''" >
                 AND a.phone LIKE CONCAT ('%', #{phone}, '%')
             </if>
-            <if test="email != null and email != ''" >
-                AND a.email LIKE CONCAT ('%', #{email}, '%')
+            <if test="address != null and address != ''" >
+                AND a.address LIKE CONCAT ('%', #{address}, '%')
             </if>
         </where>
     </select>

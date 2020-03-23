@@ -1,7 +1,7 @@
 package com.htz.chsystem.web.admin.web.interceptor;
 
 import com.htz.chsystem.commons.constant.ConstantUtils;
-import com.htz.chsystem.domain.TbUser;
+import com.htz.chsystem.domain.TbWorker;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
 
-        TbUser user = (TbUser) httpServletRequest.getSession().getAttribute(ConstantUtils.SESSION_USER);
+        TbWorker user = (TbWorker) httpServletRequest.getSession().getAttribute(ConstantUtils.SESSION_USER);
 
         //未登录
         if (user == null){

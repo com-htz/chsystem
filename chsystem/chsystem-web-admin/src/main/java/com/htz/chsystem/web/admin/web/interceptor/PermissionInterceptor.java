@@ -1,7 +1,7 @@
 package com.htz.chsystem.web.admin.web.interceptor;
 
 import com.htz.chsystem.commons.constant.ConstantUtils;
-import com.htz.chsystem.domain.TbUser;
+import com.htz.chsystem.domain.TbWorker;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -17,7 +17,7 @@ public class PermissionInterceptor implements HandlerInterceptor {
     public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception {
         //以 login 结尾的请求
         if (modelAndView != null && modelAndView.getViewName() != null && modelAndView.getViewName().endsWith("login")){
-            TbUser user = (TbUser) httpServletRequest.getSession().getAttribute(ConstantUtils.SESSION_USER);
+            TbWorker user = (TbWorker) httpServletRequest.getSession().getAttribute(ConstantUtils.SESSION_USER);
             if (user != null){
                 httpServletResponse.sendRedirect("/main");
             }

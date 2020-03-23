@@ -2,32 +2,32 @@ package com.htz.chsystem.web.admin.service;
 
 import com.htz.chsystem.commons.dto.BaseResult;
 import com.htz.chsystem.commons.dto.PageInfo;
-import com.htz.chsystem.domain.TbUser;
+import com.htz.chsystem.domain.TbWorker;
 
 import java.util.List;
 
 /**
  * 用户service抽象类
- * <p>Title: TbUserService</p>
+ * <p>Title: TbWorkerService</p>
  * <p>Description: </p>
  *
  * @author EnergyFiled
  * @version 1.0.0
  */
 
-public interface TbUserService {
+public interface TbWorkerService {
     /**
      * 查询全部
      * @return
      */
-    List<TbUser> selectAll();
+    List<TbWorker> selectAll();
 
     /**
      * 保存信息
      * @param tbUser
      * @return
      */
-    BaseResult save(TbUser tbUser);
+    BaseResult save(TbWorker tbUser);
 
     /**
      * 删除
@@ -40,13 +40,13 @@ public interface TbUserService {
      * @param id
      * @return
      */
-    TbUser getById(Long id);
+    TbWorker getById(Long id);
 
     /**
      * 更新信息
      * @param tbUser
      */
-    void update(TbUser tbUser);
+    void update(TbWorker tbUser);
 
 
     /**
@@ -61,13 +61,13 @@ public interface TbUserService {
      * @param length
      * @return
      */
-    PageInfo<TbUser> page(int start, int length, int draw, TbUser tbUser);
+    PageInfo<TbWorker> page(int start, int length, int draw, TbWorker tbUser);
 
     /**
      * 查询总条数
      * @return
      */
-    int count(TbUser tbUser);
+    int count(TbWorker tbUser);
 
     /**
      * 登录
@@ -75,5 +75,5 @@ public interface TbUserService {
      * @param password
      * @return
      */
-    TbUser login(String phone, String password);
+    TbWorker login(String phone, String password);
 }

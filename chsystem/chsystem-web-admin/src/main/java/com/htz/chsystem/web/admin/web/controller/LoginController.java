@@ -1,8 +1,8 @@
 package com.htz.chsystem.web.admin.web.controller;
 
 import com.htz.chsystem.commons.constant.ConstantUtils;
-import com.htz.chsystem.domain.TbUser;
-import com.htz.chsystem.web.admin.service.TbUserService;
+import com.htz.chsystem.domain.TbWorker;
+import com.htz.chsystem.web.admin.service.TbWorkerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,7 +26,7 @@ import javax.servlet.http.HttpServletRequest;
 public class LoginController {
 
     @Resource
-    private TbUserService tbUserService;
+    private TbWorkerService tbWorkerService;
 
     /**
      * 跳转登录页面
@@ -45,16 +45,16 @@ public class LoginController {
      */
     @RequestMapping(value = "login", method = RequestMethod.POST)
     public String login(@RequestParam(required = true) String phone, @RequestParam(required = true) String password, HttpServletRequest httpServletRequest, Model model){
-        TbUser tbUser = tbUserService.login(phone, password);
+        TbWorker tbWorker = tbWorkerService.login(phone, password);
         //登录失败
-        if (tbUser == null){
+        if (tbWorker == null){
             model.addAttribute("message","用户名或密码错误，请重新输入");
             return login();
         }
         //登录成功
         else {
             //将登录信息放入会话
-            httpServletRequest.getSession().setAttribute(ConstantUtils.SESSION_USER, tbUser);
+            httpServletRequest.getSession().setAttribute(ConstantUtils.SESSION_USER, tbWorker);
             return "redirect:/main";
         }
     }

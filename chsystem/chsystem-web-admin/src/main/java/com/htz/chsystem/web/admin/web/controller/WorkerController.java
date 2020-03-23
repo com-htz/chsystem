@@ -2,8 +2,8 @@ package com.htz.chsystem.web.admin.web.controller;
 
 import com.htz.chsystem.commons.dto.BaseResult;
 import com.htz.chsystem.commons.dto.PageInfo;
-import com.htz.chsystem.domain.TbUser;
-import com.htz.chsystem.web.admin.service.TbUserService;
+import com.htz.chsystem.domain.TbWorker;
+import com.htz.chsystem.web.admin.service.TbWorkerService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,22 +27,22 @@ import javax.servlet.http.HttpServletRequest;
  */
 
 @Controller
-@RequestMapping(value = "user")
-public class UserController {
+@RequestMapping(value = "worker")
+public class WorkerController {
 
     @Resource
-    private TbUserService tbUserService;
+    private TbWorkerService tbWorkerService;
 
     @ModelAttribute
-    public TbUser getTbUser(Long id) {
-        TbUser tbUser = null;
+    public TbWorker getTbWorker(Long id) {
+        TbWorker tbWorker = null;
         // id 不为空，则从数据库获取
         if (id != null) {
-            tbUser = tbUserService.getById(id);
+            tbWorker = tbWorkerService.getById(id);
         } else {
-            tbUser = new TbUser();
+            tbWorker = new TbWorker();
         }
-        return tbUser;
+        return tbWorker;
     }
 
     /**
@@ -52,7 +52,7 @@ public class UserController {
      */
     @RequestMapping(value = "list", method = RequestMethod.GET)
     public String list() {
-        return "user_list";
+        return "worker_list";
     }
 
     /**
@@ -62,29 +62,29 @@ public class UserController {
      */
     @RequestMapping(value = "form", method = RequestMethod.GET)
     public String form() {
-        return "user_form";
+        return "worker_form";
     }
 
     /**
      * 保存用户信息
      *
-     * @param tbUser
+     * @param tbWorker
      * @return
      */
     @RequestMapping(value = "save", method = RequestMethod.POST)
-    public String save(TbUser tbUser, Model model, RedirectAttributes redirectAttributes) {
-        BaseResult baseResult = tbUserService.save(tbUser);
+    public String save(TbWorker tbWorker, Model model, RedirectAttributes redirectAttributes) {
+        BaseResult baseResult = tbWorkerService.save(tbWorker);
 
         // 保存成功
         if (baseResult.getStatus() == 200) {
             redirectAttributes.addFlashAttribute("baseResult", baseResult);
-            return "redirect:/user/list";
+            return "redirect:/worker/list";
         }
 
         // 保存失败
         else {
             model.addAttribute("baseResult", baseResult);
-            return "user_form";
+            return "worker_form";
         }
     }
 
@@ -103,7 +103,7 @@ public class UserController {
         BaseResult baseResult = null;
         if (StringUtils.isNotBlank(ids)) {
             String[] idArray = ids.split(",");
-            tbUserService.deleteMulti(idArray);
+            tbWorkerService.deleteMulti(idArray);
             baseResult = BaseResult.success("删除用户成功");
         } else {
             baseResult = BaseResult.fail("删除用户失败");
@@ -119,7 +119,7 @@ public class UserController {
      */
     @RequestMapping(value = "detail", method = RequestMethod.GET)
     public String detail() {
-        return "user_detail";
+        return "worker_detail";
     }
 
     /**
@@ -133,7 +133,7 @@ public class UserController {
 
     @ResponseBody
     @RequestMapping(value = "page", method = RequestMethod.GET)
-    public PageInfo<TbUser> page(HttpServletRequest request, TbUser tbUser) {
+    public PageInfo<TbWorker> page(HttpServletRequest request, TbWorker tbWorker) {
         String strDraw = request.getParameter("draw");
         String strStart = request.getParameter("start");
         String strLength = request.getParameter("length");
@@ -143,7 +143,7 @@ public class UserController {
         int length = strLength == null ? 10 : Integer.parseInt(strLength);
 
         // 封装 Datatables 需要的结果
-        PageInfo<TbUser> pageInfo = tbUserService.page(start, length, draw, tbUser);
+        PageInfo<TbWorker> pageInfo = tbWorkerService.page(start, length, draw, tbWorker);
 
         return pageInfo;
     }
