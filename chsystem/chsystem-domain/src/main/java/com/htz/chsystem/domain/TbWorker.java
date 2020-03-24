@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * tb_user表对应对象
+ * tb_worker表对应对象
  */
 @Data
 public class TbWorker implements Serializable {
