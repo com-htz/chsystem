@@ -30,12 +30,11 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                控制面板
+                首页
                 <small></small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="/main"><i class="fa fa-dashboard"></i> 首页</a></li>
-                <li class="active">控制面板</li>
             </ol>
         </section>
         <!-- Main content -->
