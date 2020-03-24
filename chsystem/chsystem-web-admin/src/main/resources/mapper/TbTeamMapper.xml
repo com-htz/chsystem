@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.htz.chsystem.web.admin.dao.TbTeamDao">
+    <sql id="tbTeamColumns">
+      a.id,
+      a.grade,
+      a.team_name,
+      a.stu_number,
+      a.team_note
+    </sql>
+
+    <select id="selectAll" resultType="TbTeam">
+        SELECT
+        <include refid="tbTeamColumns" />
+        FROM
+        tb_team AS a
+    </select>
+
+    <insert id="insert" >
+        INSERT INTO tb_team (
+          `grade`,
+          `team_name`,
+          `stu_number`,
+          `team_note`
+        )
+        VALUES
+          (
+            #{grade},
+            #{teamName},
+            #{stuNumber},
+            #{teamNote}
+          );
+    </insert>
+
+    <delete id="delete">
+        DELETE from tb_team WHERE id = #{id}
+    </delete>
+
+    <update id="update">
+        UPDATE
+          tb_team
+        SET
+          grade = #{grade},
+          team_name = #{teamName},
+          stu_number = #{stuNumber},
+          team_note = #{teamNote}
+        WHERE id = #{id}
+    </update>
+
+    <select id="getById" resultType="TbTeam">
+        SELECT
+        <include refid="tbTeamColumns" />
+        FROM
+        tb_team AS a
+        WHERE
+        a.id = #{id}
+    </select>
+
+    <delete id="deleteMulti">
+        DELETE FROM tb_team
+        WHERE id IN
+        <foreach collection="array" open="(" close=")" separator=","  item="id">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="page" resultType="TbTeam" parameterType="java.util.Map">
+        SELECT
+        <include refid="tbTeamColumns" />
+        FROM
+        tb_team AS a
+        <where>
+            <if test="pageParams.grade != null and pageParams.grade != ''" >
+                AND a.grade LIKE CONCAT ('%', #{pageParams.grade}, '%')
+            </if>
+            <if test="pageParams.teamName != null and pageParams.teamName != ''" >
+                AND a.team_name LIKE CONCAT ('%', #{pageParams.teamName}, '%')
+            </if>
+        </where>
+        --         ORDER BY a.updated DESC
+        LIMIT #{start}, #{length}
+    </select>
+
+    <select id="count" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM tb_team AS a
+        <where>
+            <if test="grade != null and grade != ''" >
+                AND a.grade LIKE CONCAT ('%', #{grade}, '%')
+            </if>
+            <if test="teamName != null and teamName != ''" >
+                AND a.team_name LIKE CONCAT ('%', #{teamName}, '%')
+            </if>
+        </where>
+    </select>
+
+</mapper>
