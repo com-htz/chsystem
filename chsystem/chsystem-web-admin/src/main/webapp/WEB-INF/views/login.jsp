@@ -63,7 +63,6 @@
                 <div class="col-xs-8">
                     <div class="checkbox icheck">
                         <label>
-                            <input name="isRemember" type="checkbox" ${isRemember == true ? "checked" :""}>记住我
                         </label>
                     </div>
                 </div>
@@ -75,7 +74,6 @@
             </div>
         </form>
         <!-- /.social-auth-links -->
-        <a href="#">忘记密码</a><br>
 
     </div>
     <!-- /.login-box-body -->
