@@ -25,27 +25,10 @@
 
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <span class="hidden-xs">${user.username}</span>
+                    <a href="/logout" class="fa fa-sign-out" >
+                        <span class="">注销</span>
                     </a>
-                    <ul class="dropdown-menu">
-                        <!-- User image -->
-                        <li class="user-header">
-                            <p>
-                                ${user.username}
-                                <small><fmt:formatDate value="${user.created}" pattern="yyyy-MM-dd HH:mm:ss"/> </small>
-                            </p>
-                        </li>
-                        <!-- Menu Footer-->
-                        <li class="user-footer">
-                            <div class="pull-left">
-                                <a href="#" class="btn btn-default btn-flat">个人信息</a>
-                            </div>
-                            <div class="pull-right">
-                                <a href="/logout" class="btn btn-default btn-flat">注销</a>
-                            </div>
-                        </li>
-                    </ul>
+
                 </li>
 
             </ul>
