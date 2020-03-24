@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>管理平台 | 用户管理</title>
+    <title>管理平台 | 职工管理</title>
     <jsp:include page="../includes/header.jsp" />
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -20,12 +20,12 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                用户管理
+                职工管理
                 <small></small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="/main"><i class="fa fa-dashboard"></i> 首页</a></li>
-                <li class="active">用户列表</li>
+                <li class="active">职工列表</li>
             </ol>
         </section>
 
@@ -57,14 +57,6 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-3">
                                     <div class="form-group">
-                                        <label for="address" class="col-sm-4 control-label">邮箱</label>
-                                        <div class="col-sm-8">
-                                            <input id="address" class="form-control" placeholder="邮箱" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-3">
-                                    <div class="form-group">
                                         <label for="phone" class="col-sm-4 control-label">手机</label>
                                         <div class="col-sm-8">
                                             <input id="phone" class="form-control" placeholder="手机" />
@@ -81,7 +73,7 @@
 
                     <div class="box">
                         <div class="box-header">
-                            <h3 class="box-title">用户列表</h3>
+                            <h3 class="box-title">职工列表</h3>
                         </div>
 
                         <div class="box-body">
@@ -158,12 +150,10 @@
     function search() {
         var username = $("#username").val();
         var phone = $("#phone").val();
-        var address = $("#address").val();
 
         var param = {
             "username": username,
-            "phone": phone,
-            "address": address
+            "phone": phone
         };
 
         _dataTable.settings()[0].ajax.data = param;
