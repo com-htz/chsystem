@@ -92,9 +92,6 @@
             <if test="pageParams.phone != null and pageParams.phone != ''" >
                 AND a.phone LIKE CONCAT ('%', #{pageParams.phone}, '%')
             </if>
-            <if test="pageParams.address != null and pageParams.address != ''" >
-                AND a.address LIKE CONCAT ('%', #{pageParams.address}, '%')
-            </if>
         </where>
         --         ORDER BY a.updated DESC
         LIMIT #{start}, #{length}
@@ -108,9 +105,6 @@
             </if>
             <if test="phone != null and phone != ''" >
                 AND a.phone LIKE CONCAT ('%', #{phone}, '%')
-            </if>
-            <if test="address != null and address != ''" >
-                AND a.address LIKE CONCAT ('%', #{address}, '%')
             </if>
         </where>
     </select>
