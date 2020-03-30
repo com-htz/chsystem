@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.htz.chsystem.web.admin.dao.TbStudentDao">
+    <sql id="tbStudentColumns">
+        a.id,
+        a.name,
+        a.gender,
+        a.birth,
+        a.id_card AS idCard,
+        a.address,
+        a.father,
+        a.f_phone AS faPhone,
+        a.mother,
+        a.m_phone AS moPhone,
+        a.note
+    </sql>
+
+    <select id="selectAll" resultType="TbStudent">
+        SELECT
+        <include refid="tbStudentColumns" />
+        FROM
+        tb_student AS a
+    </select>
+
+    <insert id="insert" >
+        INSERT INTO tb_student (
+            `name`,
+            `gender`,
+            `birth`,
+            `id_card`,
+            `address`,
+            `father`,
+            `f_phone`,
+            `mother`,
+            `m_phone`,
+            `note`
+        )
+        VALUES
+          (
+            #{name},
+            #{gender},
+            #{birth},
+            #{idCard},
+            #{address},
+            #{father},
+            #{faPhone},
+            #{mother},
+            #{moPhone},
+            #{note}
+          );
+    </insert>
+
+    <delete id="delete">
+        DELETE from tb_student WHERE id = #{id}
+    </delete>
+
+    <update id="update">
+        UPDATE
+          tb_student
+        SET
+            name =  #{name},
+            gender = #{gender},
+            birth = #{birth},
+            id_card = #{idCard},
+            address = #{address},
+            father = #{father},
+            f_phone = #{faPhone},
+            mother = #{mother},
+            m_phone = #{moPhone},
+            note = #{note}
+        WHERE id = #{id}
+    </update>
+
+    <select id="getById" resultType="TbStudent">
+        SELECT
+        <include refid="tbStudentColumns" />
+        FROM
+        tb_student AS a
+        WHERE
+        a.id = #{id}
+    </select>
+
+
+
+    <delete id="deleteMulti">
+        DELETE FROM tb_student
+        WHERE id IN
+        <foreach collection="array" open="(" close=")" separator=","  item="id">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="page" resultType="TbStudent" parameterType="java.util.Map">
+        SELECT
+        <include refid="tbStudentColumns" />
+        FROM tb_student AS a JOIN tb_team_student AS c
+        ON a.id = c.student_id
+        <where>
+            <if test="pageParams.name != null and pageParams.name != ''" >
+                AND a.name LIKE CONCAT ('%', #{pageParams.name}, '%')
+            </if>
+            <if test="pageParams.teamId != null and pageParams.teamId != ''" >
+                AND c.team_id = ${pageParams.teamId} AND a.id = c.student_id
+            </if>
+        </where>
+        LIMIT #{start}, #{length}
+    </select>
+
+    <select id="count" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM tb_student AS a JOIN tb_team_student AS c
+        ON a.id = c.student_id
+        <where>
+            <if test="name != null and name != ''" >
+                AND a.name LIKE CONCAT ('%', #{name}, '%')
+            </if>
+            <if test="teamId != null and teamId != ''" >
+                AND c.team_id = ${teamId} AND a.id = c.student_id
+            </if>
+        </where>
+    </select>
+
+</mapper>
