@@ -2,6 +2,7 @@ package com.htz.chsystem.web.admin.web.controller;
 
 import com.htz.chsystem.commons.dto.BaseResult;
 import com.htz.chsystem.commons.dto.PageInfo;
+import com.htz.chsystem.domain.TbStudent;
 import com.htz.chsystem.domain.TbTeam;
 import com.htz.chsystem.web.admin.service.TbTeamService;
 import org.apache.commons.lang3.StringUtils;
@@ -54,7 +55,6 @@ public class TeamController {
         return tbTeam;
     }
 
-
     /**
      * 跳转到班级列表页
      *
@@ -74,6 +74,7 @@ public class TeamController {
     public String detail(){
         return "team_detail";
     }
+
 
     /**
      *
@@ -148,5 +149,4 @@ public class TeamController {
         int length = strLength == null ? 10 : Integer.parseInt(strLength);
         return tbTeamService.page(start, length, draw, tbTeam);
     }
-
 }
