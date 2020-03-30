@@ -4,9 +4,23 @@
     <sql id="tbTeamColumns">
       a.id,
       a.grade,
-      a.team_name,
-      a.stu_number,
-      a.team_note
+      a.team_name AS teamName,
+      a.stu_number AS stuNumber,
+      a.team_note AS teamNote
+    </sql>
+
+    <sql id="tbStudentColumns">
+        b.id,
+        b.name,
+        b.gender,
+        b.birth,
+        b.id_card AS idCard,
+        b.address,
+        b.father,
+        b.f_phone AS faPhone,
+        b.mother,
+        b.m_phone AS moPhone,
+        b.note
     </sql>
 
     <select id="selectAll" resultType="TbTeam">
@@ -54,6 +68,14 @@
         tb_team AS a
         WHERE
         a.id = #{id}
+    </select>
+    
+    <select id="getStudentByTeamId" resultType="TbStudent">
+        SELECT
+        <include refid="tbStudentColumns"/>
+        FROM tb_team AS a, tb_team_student AS b, tb_team_student AS c
+        WHERE
+        a.id = #{id} AND a.id = c.team_id AND b.id = c.student_id
     </select>
 
     <delete id="deleteMulti">
