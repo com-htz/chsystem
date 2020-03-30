@@ -31,7 +31,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="/team/list"><i class="fa fa-circle-o"></i> 班级管理</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> 学生管理</a></li>
+                    <li><a href="/student/list"><i class="fa fa-circle-o"></i> 学生管理</a></li>
                 </ul>
             </li>
             <li class="treeview">
