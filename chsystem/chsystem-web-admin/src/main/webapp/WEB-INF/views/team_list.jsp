@@ -120,7 +120,6 @@
 
 <script>
     var _dataTable;
-
     $(function () {
         var _columns = [
             {
@@ -137,25 +136,21 @@
                 "data": function (row, type, val, meta) {
                     var detailUrl = "/team/detail?id=" + row.id;
                     var deleteUrl = "/team/delete";
-                    return '<button type="button" class="btn btn-sm btn-default" onclick="App.showDetail(\'' + detailUrl + '\');"><i class="fa fa-search"></i> 查看</button>&nbsp;&nbsp;&nbsp;' +
+                    return '<a href="/team/student?id=' + row.id + '" type="button" class="btn btn-sm btn-default"><i class="fa fa-edit"></i> 编辑</a>&nbsp;&nbsp;&nbsp;' +
                         '<a href="/team/form?id=' + row.id + '" type="button" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i> 编辑</a>&nbsp;&nbsp;&nbsp;' +
                         '<button type="button" class="btn btn-sm btn-danger" onclick="App.deleteSingle(\'' + deleteUrl + '\', \'' + row.id + '\')"><i class="fa fa-trash-o"></i> 删除</button>';
                 }
             }
         ];
-
         _dataTable = App.initDataTables("/team/page", _columns);
     });
-
     function search() {
         var grade = $("#grade").val();
         var teamName = $("#teamName").val();
-
         var param = {
             "grade": grade,
             "teamName": teamName
         };
-
         _dataTable.settings()[0].ajax.data = param;
         _dataTable.ajax.reload();
     }
